@@ -1,0 +1,8 @@
+streamlit==1.35.0
+langchain==0.2.0
+google-generativeai==0.7.0
+google-ai-generativelanguage==0.6.18
+langchain-google-genai==2.1.6
+PyMuPDF==1.24.2
+pillow==10.3.0
+python-dotenv==1.0.1
