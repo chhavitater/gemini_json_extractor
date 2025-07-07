@@ -26,8 +26,8 @@ if uploaded_file:
     st.text_area("Raw Content", raw_text, height=200)
 
     with st.spinner("🧠 Processing with Gemini AI..."):
-        agent = lch.get_agent()
-        response = agent.run(raw_text).strip()
+        
+        response = lch.run_gemini_prompt(raw_text).strip()
 
     try:
         json_data = json.loads(response)
@@ -35,8 +35,8 @@ if uploaded_file:
         st.code(response, language="json")
         st.json(json_data)
 
-        st.subheader("📊 Table View")
-        st.table(json_data["data"])
+        #st.subheader("📊 Table View")
+        #st.table(json_data["data"])
     except Exception as e:
         st.error(f"❌ Failed to parse JSON: {e}")
         st.write("Raw output from Gemini:")
